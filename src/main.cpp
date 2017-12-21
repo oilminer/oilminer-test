@@ -2500,7 +2500,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nTime    = 1513827620;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
         block.nNonce   = 183321;
-		if(fTestNet)
+		      if(fTestNet)
         {
             block.nNonce   = 0;
         }
@@ -2524,9 +2524,24 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.hashMerkleRoot == %s\n", block.hashMerkleRoot.ToString().c_str());
         printf("block.nTime = %u \n", block.nTime);
         printf("block.nNonce = %u \n", block.nNonce);
+        printf("=============================\n");
+        if (true && block.GetHash() != hashGenesisBlock)
+
+        {
+          printf("=============================");
+          printf("genesis.nTime = %u \n", block.nTime);
+          printf("genesis.nNonce = %u \n", block.nNonce);
+          printf("genesis.nVersion = %u \n", block.nVersion);
+          printf("genesis.GetHash = %s\n", block.GetHash().ToString().c_str());
+          //   string str = block.GetHash().ToString().c_str();
+
+          printf("genesis.hashMerkleRoot = %s \n", block.hashMerkleRoot.ToString().c_str());
+          printf("=============================\n");
+          // string str2 =  block.hashMerkleRoot.ToString().c_str();
+        }
 
         //// debug print
-        assert(block.hashMerkleRoot == uint256("0x72c749f7d2ac4201e3a83e4410c935cd5d2e679b5edbd6cad28d6e57e4f917b7"));
+        //assert(block.hashMerkleRoot == uint256("0x72c749f7d2ac4201e3a83e4410c935cd5d2e679b5edbd6cad28d6e57e4f917b7"));
         block.print();
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
         assert(block.CheckBlock());
