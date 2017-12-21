@@ -1139,8 +1139,7 @@ void MapPort()
 // The first name is used as information source for addrman.
 // The second name should resolve to a list of seed addresses.
 static const char *strDNSSeed[][2] = {
-    {"31.31.77.119", "31.31.77.119"}, //Main oilminer Seed Node
-    {"185.8.239.206:12345", "185.8.239.206:12345"}, //Main oilminer Seed Node
+    {"68.71.45.190", "68.71.45.190"}, //Main oilminer Seed Node
 };
 
 void ThreadDNSAddressSeed(void* parg)
