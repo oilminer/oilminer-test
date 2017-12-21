@@ -2499,10 +2499,10 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = 1513832140;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 18321;
+        block.nNonce   = 8321;
 		      if(fTestNet)
         {
-            block.nNonce   = 0;
+            block.nNonce   = 2213;
         }
         if (false  && (block.GetHash() != hashGenesisBlock)) {
 
@@ -2525,14 +2525,14 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nTime = %u \n", block.nTime);
         printf("block.nNonce = %u \n", block.nNonce);
         //printf("=============================\n");
-        if (false && block.GetHash() != hashGenesisBlock)
+        if (true && block.GetHash() != hashGenesisBlock)
 
         {
           printf("=============================");
           printf("genesis.nTime = %u \n", block.nTime);
           printf("genesis.nNonce = %u \n", block.nNonce);
           printf("genesis.nVersion = %u \n", block.nVersion);
-          printf("genesis.GetHash = %s\n", block.GetHash().ToString().c_str());
+          printf("genesis.GetHash = %s \n", block.GetHash().ToString().c_str());
           //   string str = block.GetHash().ToString().c_str();
 
           printf("genesis.hashMerkleRoot = %s \n", block.hashMerkleRoot.ToString().c_str());
