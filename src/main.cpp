@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2010 Satoshi Nakamoto
+// Copyright (c) 2009-2010 Oinminer Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -2487,7 +2487,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
         const char* pszTimestamp = "oilminer X15 PoW PoS Hybrid Cryptocurrency";
         CTransaction txNew;
-        txNew.nTime = 1405446865;
+        txNew.nTime = 1513827420;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -2497,9 +2497,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1405446865;
+        block.nTime    = 1513827420;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 1877118;
+        block.nNonce   = 183321;
 		if(fTestNet)
         {
             block.nNonce   = 0;
@@ -2526,7 +2526,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nNonce = %u \n", block.nNonce);
 
         //// debug print
-        assert(block.hashMerkleRoot == uint256("0xd57d7e0881af3b91a0ec537ad3eeeea6d253ccc0d76f5af3d62970df92f6fbe4"));
+        //assert(block.hashMerkleRoot == uint256("0xd57d7e0881af3b91a0ec537ad3eeeea6d253ccc0d76f5af3d62970df92f6fbe4"));
         block.print();
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
         assert(block.CheckBlock());

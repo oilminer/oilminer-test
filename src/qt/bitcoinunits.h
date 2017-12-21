@@ -34,7 +34,7 @@ public:
     static QString name(int unit);
     //! Longer description
     static QString description(int unit);
-    //! Number of Satoshis (1e-8) per unit
+    //! Number of Oinminers (1e-8) per unit
     static qint64 factor(int unit);
     //! Number of amount digits (to represent max number of coins)
     static int amountDigits(int unit);

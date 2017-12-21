@@ -15,19 +15,7 @@ greaterThan(QT_MAJOR_VERSION, 4) {
     DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0
 }
 
-BOOST_LIB_SUFFIX=-mgw48-mt-s-1_55
-BOOST_INCLUDE_PATH=C:/deps/boost_1_55_0
-BOOST_LIB_PATH=C:/deps/boost_1_55_0/stage/lib
-BDB_INCLUDE_PATH=C:/deps/db-4.8.30.NC/build_unix
-BDB_LIB_PATH=C:/deps/db-4.8.30.NC/build_unix
-OPENSSL_INCLUDE_PATH=C:/deps/openssl-1.0.1h/include
-OPENSSL_LIB_PATH=C:/deps/openssl-1.0.1h
-MINIUPNPC_INCLUDE_PATH=C:/deps
-LIBPNG_INCLUDE_PATH=C:/deps/libpng-1.6.9
-LIBPNG_LIB_PATH=C:/deps/libpng-1.6.9/.libs
-MINIUPNPC_LIB_PATH=C:/deps/miniupnpc
-QRENCODE_INCLUDE_PATH=C:/deps/qrencode-3.4.3
-QRENCODE_LIB_PATH=C:/deps/qrencode-3.4.3/.libs
+
 
 # for boost 1.37, add -mt to the boost libraries
 # use: qmake BOOST_LIB_SUFFIX=-mt
@@ -38,6 +26,21 @@ QRENCODE_LIB_PATH=C:/deps/qrencode-3.4.3/.libs
 # Dependency library locations can be customized with:
 #    BOOST_INCLUDE_PATH, BOOST_LIB_PATH, BDB_INCLUDE_PATH,
 #    BDB_LIB_PATH, OPENSSL_INCLUDE_PATH and OPENSSL_LIB_PATH respectively
+
+win32 {
+  BOOST_LIB_SUFFIX=-mgw49-mt-s-1_55
+  BOOST_INCLUDE_PATH=C:/dev/deps/boost_1_55_0
+  BOOST_LIB_PATH=C:/dev/deps/boost_1_55_0/stage/lib
+  BDB_INCLUDE_PATH=C:/dev/deps/db-4.8.30.NC/build_unix
+  BDB_LIB_PATH=C:/dev/deps/db-4.8.30.NC/build_unix
+  OPENSSL_INCLUDE_PATH=C:/dev/deps/openssl-1.0.2h/include
+  OPENSSL_LIB_PATH=C:/dev/deps/openssl-1.0.2h
+  MINIUPNPC_INCLUDE_PATH=C:/dev/deps/
+  MINIUPNPC_LIB_PATH=C:/dev/deps/miniupnpc
+  MINIUPNP_STATICLIB=C:/dev/deps/miniupnpc
+  QRENCODE_INCLUDE_PATH=C:/dev/deps/qrencode-3.4.4
+  QRENCODE_LIB_PATH=C:/dev/deps/qrencode-3.4.4/.libs
+}
 
 OBJECTS_DIR = build
 MOC_DIR = build
@@ -135,7 +138,7 @@ SOURCES += src/txdb-leveldb.cpp \
 	src/fugue.c \
 	src/hamsi.c \
 	src/shabal.c \
-    src/whirlpool.c 
+    src/whirlpool.c
 
 !win32 {
     # we use QMAKE_CXXFLAGS_RELEASE even without RELEASE=1 because we use RELEASE to indicate linking preferences not -O preferences
@@ -287,7 +290,7 @@ HEADERS += src/qt/bitcoingui.h \
 	src/sph_fugue.h \
 	src/sph_hamsi.h \
 	src/sph_shabal.h \
-	src/sph_whirlpool.h \ 
+	src/sph_whirlpool.h \
     src/sph_types.h \
     src/threadsafety.h \
     src/txdb-leveldb.h
@@ -363,7 +366,7 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/scrypt-x86.S \
     src/scrypt-x86_64.S \
     src/scrypt.cpp \
-    src/pbkdf2.cpp 
+    src/pbkdf2.cpp
 
 RESOURCES += \
     src/qt/bitcoin.qrc
