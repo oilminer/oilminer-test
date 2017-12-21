@@ -2487,7 +2487,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
         const char* pszTimestamp = "oilminer X15 PoW PoS Hybrid Cryptocurrency";
         CTransaction txNew;
-        txNew.nTime = 1513827420;
+        txNew.nTime = 1513827620;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -2497,7 +2497,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1513827420;
+        block.nTime    = 1513827620;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
         block.nNonce   = 183321;
 		if(fTestNet)
