@@ -2485,7 +2485,7 @@ bool LoadBlockIndex(bool fAllowNew)
         if (!fAllowNew)
             return false;
 
-        const char* pszTimestamp = "oilminer X15 PoW PoS Hybrid Cryptocurrency";
+        const char* pszTimestamp = "Start OIL miner / 21/12/2017";
         CTransaction txNew;
         txNew.nTime = 1513832140;
         txNew.vin.resize(1);
