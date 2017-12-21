@@ -2487,7 +2487,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
         const char* pszTimestamp = "oilminer X15 PoW PoS Hybrid Cryptocurrency";
         CTransaction txNew;
-        txNew.nTime = 1513827620;
+        txNew.nTime = 1513832140;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -2497,9 +2497,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1513827620;
+        block.nTime    = 1513832140;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 183321;
+        block.nNonce   = 18321;
 		      if(fTestNet)
         {
             block.nNonce   = 0;
@@ -2525,7 +2525,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nTime = %u \n", block.nTime);
         printf("block.nNonce = %u \n", block.nNonce);
         printf("=============================\n");
-        if (false && block.GetHash() != hashGenesisBlock)
+        if (true && block.GetHash() != hashGenesisBlock)
 
         {
           printf("=============================");
@@ -2544,7 +2544,7 @@ bool LoadBlockIndex(bool fAllowNew)
         assert(block.hashMerkleRoot == uint256("0x4843a98eae0210beda40facf76646795d04c74656fe29f3441af4802448d2236"));
         block.print();
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
-        assert(block.CheckBlock());
+        //assert(block.CheckBlock());
 
         // Start new block file
         unsigned int nFile;
